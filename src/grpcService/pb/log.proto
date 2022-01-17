@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "testGRPCandREST/src/grpcService/Log";
+package Log;
+
+service Logger {
+  rpc Read (ID) returns (Log) {}
+  rpc Write (Log) returns (ID) {}
+}
+
+message Log {
+  string id = 1;
+  string value = 2;
+}
+
+message ID {
+  string id = 1;
+}
